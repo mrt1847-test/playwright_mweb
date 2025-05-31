@@ -59,5 +59,6 @@ async def context(browser_type: Browser, request) -> BrowserContext:
 @pytest.fixture(scope="function")
 async def page(context: BrowserContext) -> Page:
     page = await context.new_page()
+    page.set_default_timeout(10000)  # 기본 타임아웃 10초
     yield page
     await page.close()

@@ -9,6 +9,6 @@ class Login():
 
     async def login(self, username: str, password: str):
         await self.page.click("text=로그인")
-        await self.page.fill("#id", username)
-        await self.page.fill("#pw", password)
-        await self.page.click("button[type='submit']")
+        await self.page.fill("#typeMemberInputId", username)
+        await self.page.fill("#typeMemberInputPassword", password)
+        await self.page.click("#btn_memberLogin")

@@ -14,13 +14,16 @@ async def test_gmarket_purchase_flow(page):
     product = Vip(page)
     order = CheckOut(page)
     mypage = MyG(page)
+    try:
+        await login.goto()
+        await login.login("cease2504", "asdf12!@")
 
-    await login.goto()
-    await login.login("cease2504", "")
+        await search.search_product("무선 이어폰")
+        await product.select_first_product()
+        await product.click_buy_now()
 
-    await search.search_product("무선 이어폰")
-    await product.select_first_product()
-    await product.click_buy_now()
-
-    await order.complete_purchase()
-    await mypage.verify_latest_order()
+        await order.complete_purchase()
+        await mypage.verify_latest_order()
+    except Exception as e:
+        await page.screenshot(path="error_screenshot.png")
+        raise e  # 테스트를 실패로 처리
