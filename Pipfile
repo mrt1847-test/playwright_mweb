@@ -8,6 +8,8 @@ pytest = "*"
 playwright = "*"
 pytest-xdist = "*"
 pytest-asyncio = "*"
+gspread = "*"
+pydata-google-auth = "*"
 
 [dev-packages]
 
