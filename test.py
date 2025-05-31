@@ -59,7 +59,7 @@ async def test(page,request):
     mypage = MyG(page)
     try:
         await login.goto()
-        await login.login("cease2504", "asdf12!@")
+        await login.login("cease2504", "")
 
         await search.search_product("무선 이어폰")
         await product.select_first_product()
