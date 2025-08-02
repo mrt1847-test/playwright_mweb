@@ -50,6 +50,7 @@ def input_fail(test_id, sheet_num, error_reason):
 
 #pipenv run pytest --cache-clear test.py --asyncio-mode=auto -n 4
 @pytest.mark.asyncio
+@pytest.mark.testrail_id("C1234")
 async def test(page,request):
     test_id = request.node.name
     login = Login(page)

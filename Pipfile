@@ -4,11 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pytest = "*"
 playwright = "*"
 pytest-xdist = "*"
 pytest-asyncio = "*"
 gspread = "*"
+pytest = "*"
 pydata-google-auth = "*"
 
 [dev-packages]
